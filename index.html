@@ -132,10 +132,42 @@ h1, h2, h3 {
   100% { transform: translate(0, 0); }
 }
 
+
+/* ====== Filled Neon ====== */
+.button.neon {
+  --btn-color: #000;
+  --btn-bg: var(--accent);
+  --btn-border: var(--accent);
+  text-shadow: none;
+}
+
+.button.neon:hover {
+  background: var(--accent-dim);
+  box-shadow: 0 0 16px var(--accent);
+}
+
+/* ====== Pulse Animation (add class .pulse) ====== */
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 10px var(--accent);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--accent);
+  }
+  100% {
+    box-shadow: 0 0 10px var(--accent);
+  }
+}
+
+.button.pulse {
+  animation: neonPulse 1.6s infinite;
+}
+
+ 
 </style>
-<h1>PROJECT BACON BANANA</h1> 
-<h1 id="speechshower" class="glitch"></h1>
-<button type="button" onclick="connectSerial()">Connect Serial Baud 9600!</button>
+<h1 class="glitch">PROJECT BACON BANANA</h1> 
+<h1 id="speechshower" class="terminal"></h1>
+<button class="button neon pulse"type="button" onclick="connectSerial()">Connect Serial Baud 9600!</button>
 
 
 <script>

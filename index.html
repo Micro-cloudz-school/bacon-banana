@@ -4,7 +4,7 @@
 <html>
 
 <h1 id="speechshower"></h1>
-<button type="button" onclick="connectSerial()">Connect Serial Baud 19200</button>
+<button type="button" onclick="connectSerial()">Connect Serial Baud 9600</button>
 
 
 <script>
@@ -16,7 +16,7 @@ async function connectSerial() {
     try {
         // Ask the user to select a port and open a connection
         port = await navigator.serial.requestPort();
-        await port.open({ baudRate: 19200 });
+        await port.open({ baudRate: 9600 });
 
         const encoder = new TextEncoderStream();
         encoder.readable.pipeTo(port.writable);
